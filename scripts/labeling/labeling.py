@@ -1,6 +1,8 @@
-import os
 import pandas as pd
 import re
+
+# Load the dataset
+df = pd.read_csv('@sinayelj.json.csv')
 
 # Define sets of entities
 LOCATION_ENTITIES = {
@@ -112,7 +114,7 @@ def main():
     combined_conll_output = '\n\n'.join(all_conll_data)
     
     # Remove lines with only '#' and 'O'
-    combined_conll_output = re.sub(r'# O\n', '', combined_conll_output)
+    combined_conll_output = '\n'.join(line for line in combined_conll_output.split('\n') if line.strip() != '# O')
     
     with open(os.path.join(labeled_data_dir, 'labeled_ner_data.conll'), 'w', encoding='utf-8') as f:
         f.write(combined_conll_output)
