@@ -1,4 +1,6 @@
-Telegram-ECommerce-NER
+
+EthioMart-Ecommerce-Amharic-NER
+
 Overview
 
 This project aims to develop a Named Entity Recognition (NER) system for EthioMart, a centralized e-commerce platform in Ethiopia. The system will extract key business entities such as product names, prices, and locations from Amharic text, images, and documents shared across multiple Telegram channels.
